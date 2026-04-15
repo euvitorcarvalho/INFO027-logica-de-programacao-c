@@ -3,11 +3,15 @@
 #include <stdio.h>
 
 int main() {
-    int idade;
-    printf("Digite sua idade:\\> ");
-    scanf("%i", &idade);
-    int idadeEmMeses = idade * 12;
-    int idadeEmDias = idade * 365;
-    printf("Sua idade em anos é: %i\nSua idade em meses é: %i\nSua idade em anos é: %i\n,", idade, idadeEmMeses, idadeEmDias);
+    int diasTotais;
+    printf("Digite sua idade em dias:\\> ");
+    scanf("%i", &diasTotais);
+
+    int anos = diasTotais / 365;
+    int restoDias = diasTotais % 365;
+    int meses = restoDias / 30;
+    int dias = restoDias % 30;
+
+    printf("Sua idade em dias é: %i\nVocê tem %i anos, %i meses e %i dias\n", diasTotais, anos, meses, dias);
     return 0;
 }
